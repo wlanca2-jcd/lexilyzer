@@ -1,0 +1,69 @@
+-------------PLEASE EMAIL ME IF YOU ARE HAVING ISSUES MY CODE CAN RUN ON INTELLIJ-------------
+(TROUBLE SHOOTING : my program was created in Intellij IDE
+if netbeans or JavaSpace are giving you issues, its probably because of the "out" folder
+try separating the .java file into another project with the same name)
+
+
+
+BIG NOTE( my code does indeed run.. but it cannot read between EMPTY lines.. this is due to the limitation fo the file reader)
+
+
+
+Hi, my name is wesley lancaster and this is my lexical analyzer for cosc455 project 2.
+Yes, my code has been crammed into one file in part of personal preference and potential issues you could have.
+as a single java class, it should be able to run you machine like any other.
+when the code runs: it should launch the terminal and prompt the user for the location of the .txt file they want analyzed
+EX: /Users/johnmetz/Desktop/cosc455/project2/examples/ab.txt
+
+-------------So how does my code work? (6 parts)-------------
+
+part 1: the first 40 lines of code are dedicated to utulizing the file class and using a scanner to input the file location
+they then store the contents of the file into a scanner called sc
+
+part 2: this is the COPE LOOP. it uses two while loops.
+the parent while loop if for reading the text, line by line.
+and the nested loop is for reading each line lexeme by lexeme. when the child loop terminates, the parent loop will continue.
+until it too terminates, thus reaching the end of the file.
+the child loop utilizes 4 methods to contextualize each lexeme. these are the next 4 parts
+
+part 3: next() will utilize the scanner .nextline() and .next() to read through each lexeme
+
+part 4: position() will return the position within the line, and which line the lexeme is read at
+
+part 5: value() will return if the value of the lexeme is ID, Number or Null.
+
+part 6: kind() is the one that does the heavy lifting and expands of 250 lines of code!
+it works first by filtering each lexeme for its contents, and essentially acts like a massive filter to contextualize each lexeme.
+it accepts the scanner as a parameter, so it has the ability to loop in the same way the CORE LOOP does.
+
+
+
+
+
+-------------HOW TO READ THE OUTPUT-------------
+each line is seperated by the | symbol, and the the following two lines
+"Next Line:"
+"length of this line is:"
+
+each lexeme is seperated by a \n new line. every new lexeme will then be followed by the line
+"lexeme being read is:"
+
+the next line will give the position:
+"position within line is: # and position is line: #"
+
+the order of the remaining information depends on the content of each line.
+but will give at least one instance of value() and kind() and could also return
+"letters read"
+"symbols read"
+"numbers read"
+"operators read"
+then return the value of each of those.
+
+
+
+
+
+-----------------------------------------------------------------
+let me know if you have any questions and thankyou for your time!
+-Wesley Lancaster
+(4/26/22)
